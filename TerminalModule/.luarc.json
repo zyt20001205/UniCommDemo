@@ -1,0 +1,20 @@
+{
+  "completion": {
+    "keywordSnippet": "Disable",
+    "requireSeparator": "/"
+  },
+  "runtime": {
+    "special" : {
+      "f.open": "require",
+      "f.close": "require",
+      "f.read": "require",
+      "f.write": "require",
+      "smtp.mail": "require",
+      "thread.start": "require"
+    },
+    "version" : "Lua 5.5"
+  },
+  "semantic": {
+    "keyword": true
+  }
+}
