@@ -1,4 +1,4 @@
-/TerminalModule/.luarc.json
-/TerminalModule/config.json
-/TerminalModule/lib
-/TerminalModule/llm
+*/.luarc.json
+*/config.json
+*/lib
+*/llm
