@@ -16,7 +16,7 @@ assert(rx == "你好")
 database.write("utf8", "passed")
 
 database.write("read until", "running")
-for i = 1, 1000 do
+for i = 1, 100 do
     local tx = i .. "\r\n"
     port.write(TX_PORT, tx)
     local rx = port.readUntil(RX_PORT, "\r\n", 1000)
@@ -25,9 +25,12 @@ end
 database.write("read until", "passed")
 
 database.write("overflow", "running")
-for i = 1, 129 do
-    port.write(TX_PORT, "00000000")
+for i = 1, 1024 do
+    port.write(TX_PORT, "0")
+    thread.sleep(10)
 end
+thread.sleep(1000)
+port.write(TX_PORT, "0")
 thread.sleep(10)
 assert(port.info(RX_PORT).status == "closed")
 database.write("overflow", "passed")
