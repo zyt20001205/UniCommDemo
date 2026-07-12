@@ -25,8 +25,9 @@ end
 database.write("read until", "passed")
 
 database.write("overflow", "running")
-for i = 1, 1000 do
-    port.write(TX_PORT, "0000")
+for i = 1, 129 do
+    port.write(TX_PORT, "00000000")
 end
+thread.sleep(10)
 assert(port.info(RX_PORT).status == "closed")
 database.write("overflow", "passed")
